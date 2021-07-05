@@ -12,7 +12,7 @@ namespace Ekzamen_Kolesov_A.D
 /// </summary>
     public class Critical
     {
-        public int max, maxind;
+        public int maximal, maximalind;
         string Str = "";
         public List<List<Put>> Rezult = new List<List<Put>>();
         public List<Put> ListPutey; 
@@ -33,14 +33,14 @@ namespace Ekzamen_Kolesov_A.D
         public void Reshenie()
         {
             StroitPyt();
-            maxind = 0;
-            max = Rezult[0][0].Dlina;
+            maximalind = 0;
+            maximal = Rezult[0][0].Dlina;
             for (int i = 0; i < ListPutey.Count; i++) // подсчет стоимости путей
             {
-                if (RaschetDlini(Rezult[i]) >= max) // выбор самого большого
+                if (RaschetDlini(Rezult[i]) >= maximal) // выбор самого большого
                 {
-                    max = RaschetDlini(Rezult[i]);
-                    maxind = i;
+                    maximal = RaschetDlini(Rezult[i]);
+                    maximalind = i;
                 }
             }
             OutPut();
@@ -50,20 +50,20 @@ namespace Ekzamen_Kolesov_A.D
         /// </summary>
         public void OutPut()
         {
-            foreach (Put rb in Rezult[maxind])
+            foreach (Put rb in Rezult[maximalind])
             {
                 string s = (rb.Tochka1 + " - " + rb.Tochka2);
                 Debug.WriteLine(s);
             }
-            Debug.WriteLine(max);
+            Debug.WriteLine(maximal);
             using (StreamWriter Writer = new StreamWriter(@"Output.csv", false, Encoding.Default, 10))
             {
-                foreach (Put rb in Rezult[maxind])
+                foreach (Put rb in Rezult[maximalind])
                 {
                     string s = (rb.Tochka1 + " - " + rb.Tochka2);
                     Writer.WriteLine(s);
                 }
-                Writer.WriteLine(max);
+                Writer.WriteLine(maximal);
             }
         }
         /// <summary>
@@ -121,7 +121,7 @@ namespace Ekzamen_Kolesov_A.D
             return maxind;
         }
         /// <summary>
-        /// Посмтроение пути
+        /// Построение пути
         /// </summary>
         /// <param name="ls"></param>
         /// <param name="minel"></param>

@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="UML и решение\UML Диаграммы Колесов А.Д. 31П.pdf" />
     <None Include="UML и решение\Решение ММ Колесов А.Д..docx" />
   </ItemGroup>
   <ItemGroup>

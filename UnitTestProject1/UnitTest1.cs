@@ -11,28 +11,28 @@ namespace UnitTestProject1
         {
             Critical MM = new Critical();
             MM.Reshenie();
-            Assert.AreEqual(29, MM.max);
+            Assert.AreEqual(29, MM.maximal);
         }
         [TestMethod]
         public void TestMethod2()
         {
             Critical MM = new Critical();
             MM.Reshenie();
-            Assert.IsNotNull(MM.max);
+            Assert.IsNotNull(MM.maximal);
         }
         [TestMethod]
         public void TestMethod3()
         {
             Critical MM = new Critical();
             MM.Reshenie();
-            Assert.IsInstanceOfType(MM.max, typeof(int));
+            Assert.IsInstanceOfType(MM.maximal, typeof(int));
         }
         [TestMethod]
         public void TestMethod4()
         {
             Critical MM = new Critical();
             MM.Reshenie();
-            Assert.IsTrue(MM.max == 29);
+            Assert.IsTrue(MM.maximal == 29);
         }
     }
 }
