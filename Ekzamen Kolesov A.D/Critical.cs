@@ -41,6 +41,7 @@ namespace Ekzamen_Kolesov_A.D
                 {
                     maximal = RaschetDlini(Rezult[i]);
                     maximalind = i;
+                   
                 }
             }
             OutPut();
@@ -55,7 +56,7 @@ namespace Ekzamen_Kolesov_A.D
                 string s = (rb.Tochka1 + " - " + rb.Tochka2);
                 Debug.WriteLine(s);
             }
-            Debug.WriteLine(maximal);
+            Debug.WriteLine("Итоговый критический путь : " + maximal);
             using (StreamWriter Writer = new StreamWriter(@"Output.csv", false, Encoding.Default, 10))
             {
                 foreach (Put rb in Rezult[maximalind])
@@ -63,7 +64,7 @@ namespace Ekzamen_Kolesov_A.D
                     string s = (rb.Tochka1 + " - " + rb.Tochka2);
                     Writer.WriteLine(s);
                 }
-                Writer.WriteLine(maximal);
+                Writer.WriteLine("Итоговый критический путь :" + maximal);
             }
         }
         /// <summary>
@@ -219,6 +220,7 @@ namespace Ekzamen_Kolesov_A.D
                 if (RaschetDlini(RezultPromez[i]) >= max)
                 {
                     max = RaschetDlini(RezultPromez[i]);
+                    Debug.WriteLine("Промежуточные длины : " + max);
                     maxind = i;
                 }
             }
