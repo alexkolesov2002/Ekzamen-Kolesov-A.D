@@ -50,7 +50,7 @@ namespace Ekzamen_Kolesov_A.D
         /// </summary>
         public void OutPut()
         {
-            foreach (Put rb in Rezult[maximalind])
+            foreach (Put rb in Rezult[maximalind])//Формирование ответа
             {
                 string s = (rb.Tochka1 + " - " + rb.Tochka2);
                 Debug.WriteLine(s);
